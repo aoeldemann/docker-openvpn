@@ -1,0 +1,8 @@
+#!/bin/bash
+conf=/etc/resolv.conf
+[[ -e $conf.orig ]] || cp -p $conf $conf.orig
+if [[ "${1:-""}" == "-a" ]]; then
+  cat > ${conf}
+elif [[ "${1:-""}" == "-d" ]]; then
+  cat $conf.orig > $conf
+fi

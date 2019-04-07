@@ -4,6 +4,6 @@ if [ -f "/scripts/preup.sh" ]; then
 fi
 
 while true; do
-  sg vpn -c "openvpn --config /config/vpn.conf --log /var/log/openvpn.log"
+  sg vpn -c "openvpn --config /config/vpn.conf --log-append /var/log/openvpn.log"
   sleep 10
 done
